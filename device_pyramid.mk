@@ -14,11 +14,17 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Media configuration
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
@@ -55,7 +61,7 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/vold.fstab:system/etc/vold.fstab \
+    device/htc/pyramid/configs/vold.fstab:system/etc/vold.fstab \
     device/htc/pyramid/configs/99kernel:system/etc/init.d/99kernel
 
 # Keylayouts and Keychars
