@@ -14,11 +14,15 @@
 # limitations under the License.
 #
 
+### msm8660.mk OVERRIDES ###
 
 # Media configuration
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/pyramid/configs/audio_policy.conf:system/etc/audio_policy.conf
+
+### OVERRIDES END ###
 
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
@@ -132,7 +136,7 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=Albinoman887 \
     ro.goo.board=pyramid \
-    ro.goo.rom=Albinoman887-CM10-1-Pyramid-KANG \
+    ro.goo.rom=AlbinoCM \
     ro.goo.version=$(shell date +%Y%m%d-%H%M%S)
 
 # call the proprietary setup
