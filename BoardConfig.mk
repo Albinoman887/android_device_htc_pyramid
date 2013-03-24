@@ -20,9 +20,16 @@
 # definition file).
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
+# msm8660-common overrides #
+
+# use this section to override any build flags from msm8660-common
+# WARNING: Anything below the -include line will be overridden by 
+# BoardConfigCommon.mk in the msm8660-common repo.
+
+# Audio
+TARGET_QCOM_AUDIO_VARIANT := legacy
+
+# OVERRIDES END #
 
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
@@ -46,9 +53,6 @@ BUILD_KERNEL := true
 
 # Qcom GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
-
-# Audio
-TARGET_QCOM_AUDIO_VARIANT := legacy
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
