@@ -48,5 +48,10 @@ ro.max.fling_velocity=12000
 ro.min.fling_velocity=8000
 view.scroll_friction=0
 #
+# GooManger
+#
+ro.goo.developerid=Albinoman887
+ro.goo.rom=AlbinoCM
+#
 # END_PYRAMID_SYSTEM_PROPERTIES
 #
