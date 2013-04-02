@@ -24,6 +24,7 @@ ro.ril.hsxpa=3
 ro.ril.set.mtu1472=1
 wifi.interface=wlan0
 ro.telephony.default_network=0
+wifi.supplicant_scan_interval=160
 #
 # Power Saving/Sleep
 #
@@ -52,6 +53,11 @@ view.scroll_friction=0
 #
 ro.goo.developerid=Albinoman887
 ro.goo.rom=AlbinoCM
+#
+#### AUTO-ROTATE LOCKSCREEN ####
+# (uncomment below line to enable)
+#lockscreen.rot_override=true
+#
 #
 # END_PYRAMID_SYSTEM_PROPERTIES
 #
