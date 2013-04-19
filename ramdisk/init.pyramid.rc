@@ -8,7 +8,6 @@ on early-init
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
-
     export EXTERNAL_STORAGE /storage/sdcard0
 
     # load msm8660 firmware so things have time to initialize
@@ -182,15 +181,6 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-service hciattach /system/bin/brcm_patchram_plus --enable_hci \
-        --tosleep 50000 --baudrate 3000000 --use_baudrate_for_download \
-        --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
-    class main
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
 service hdmid /system/bin/hdmid
     class main
     socket hdmid stream 0660 root system graphics
@@ -256,6 +246,11 @@ on property:init.svc.bootanim=stopped
 
 on property:ro.hdmi.enable=true
     start hdmid
+
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/enable 0
+    restart adbd
+    write /sys/class/android_usb/android0/enable 1
 
 on property:sys.radio.shutdown=true
     exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh

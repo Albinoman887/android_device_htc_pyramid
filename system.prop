@@ -44,10 +44,10 @@ ro.kernel.checkjni=0
 #
 # Scrolling-Tweaks
 #
-windowsmgr.max_events_per_sec=150
-ro.max.fling_velocity=12000
-ro.min.fling_velocity=8000
-view.scroll_friction=0
+# windowsmgr.max_events_per_sec=150
+# ro.max.fling_velocity=12000
+# ro.min.fling_velocity=8000
+# view.scroll_friction=0
 #
 # GooManger
 #
