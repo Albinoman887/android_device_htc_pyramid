@@ -106,6 +106,7 @@ TUN=0
 
 # Config 3D GPU setting
     chmod 644 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
+    chmod 644 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk
     echo $GPU > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
     echo $GPU > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk
 
