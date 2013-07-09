@@ -76,7 +76,7 @@ SWEEP=0
 # 0 = disabled
 # 1 = substitute AC to USB charging always
 # 2 = substitute AC to USB charging only if there is no USB peripheral detected
-FASTCHARGE=0
+FASTCHARGE=1
 
 
 # Fsync Control
