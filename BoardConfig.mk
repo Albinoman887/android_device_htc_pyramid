@@ -20,17 +20,6 @@
 # definition file).
 #
 
-# msm8660-common overrides #
-
-# use this section to override any build flags from msm8660-common
-# WARNING: Anything below the -include line will be overridden by 
-# BoardConfigCommon.mk in the msm8660-common repo.
-
-# Audio
-TARGET_QCOM_AUDIO_VARIANT := legacy
-
-# OVERRIDES END #
-
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
 
@@ -44,8 +33,13 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_
 
 # Kernel [Build]
 TARGET_KERNEL_CONFIG := pyramid_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-arm-cortex-a8
+TARGET_KERNEL_CUSTOM_TOOLCHAIN_SUFFIX := arm-cortex_a8-linux-gnueabi
 BUILD_KERNEL := true
+
+# Build Optimizations (linaro -O3)
+ARCH_ARM_HIGH_OPTIMIZATION := true
+ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true 
 
 # Bluetooth/Wifi
 -include device/htc/msm8660-common/bcmdhd.mk

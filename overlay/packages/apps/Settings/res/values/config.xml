@@ -19,4 +19,6 @@
     <bool name="has_led_flash">true</bool>
     <!-- Volume Rocker Wake Support -->
     <bool name="config_show_volumeRockerWake">true</bool>
+    <!-- Home Button Wake Support -->
+    <bool name="config_show_homeWake">false</bool>
 </resources>
